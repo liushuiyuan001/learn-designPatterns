@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chapter04-1/src/CheesePizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04-1/src/CheesePizzaStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04-1/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04-1/src/Pizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04-1/src/PizzaStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04/src/CheesePizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04/src/Pizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04/src/PizzaStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04/src/SimplePizzaFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/src/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/src/Light.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/src/LightOffCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/src/LightOnCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/src/NoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/src/RemoteControlWithUndo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/FlyRockPowered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/study/FlyRockPowered.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +108,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.HelloWorld" />
       <module name="design" />
@@ -126,9 +122,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Demo" />
+      <module name="chapter05" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.HelloWorld" />
         <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
