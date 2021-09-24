@@ -9,6 +9,10 @@
       <module fileurl="file://$PROJECT_DIR$/chapter04/chapter04.iml" filepath="$PROJECT_DIR$/chapter04/chapter04.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter04-1/chapter04-1.iml" filepath="$PROJECT_DIR$/chapter04-1/chapter04-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter05/chapter05.iml" filepath="$PROJECT_DIR$/chapter05/chapter05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter06/chapter06.iml" filepath="$PROJECT_DIR$/chapter06/chapter06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter06-1/chapter06-1.iml" filepath="$PROJECT_DIR$/chapter06-1/chapter06-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter07/chapter07.iml" filepath="$PROJECT_DIR$/chapter07/chapter07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter08/chapter08.iml" filepath="$PROJECT_DIR$/chapter08/chapter08.iml" />
       <module fileurl="file://$PROJECT_DIR$/design.iml" filepath="$PROJECT_DIR$/design.iml" />
     </modules>
   </component>

@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chapter05/src/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter05/src/Light.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter05/src/LightOffCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter05/src/LightOnCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter05/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter05/src/NoCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter05/src/RemoteControlWithUndo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06-1/src/DvdPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06-1/src/HomeTheaterFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06-1/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06-1/src/Tuner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06/src/Duck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06/src/MallardDuck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06/src/Turkey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06/src/TurkeyAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06/src/WildTurkey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter07/src/CaffeineBeverage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter07/src/Coffee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter07/src/Tea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter08/src/Singleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -108,20 +115,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.study.HelloWorld" />
-      <module name="design" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.study.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main (3)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="chapter05" />
@@ -129,9 +123,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="chapter06" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="chapter03" />
+      <module name="chapter06-1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (3)" />
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
-        <item itemvalue="Application.HelloWorld" />
-        <item itemvalue="Application.Main (3)" />
       </list>
     </recent_temporary>
   </component>
