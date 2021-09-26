@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chapter09-1/src/DinerMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-1/src/DinerMenuIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-1/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-1/src/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-1/src/MenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-1/src/PancakeHouseMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-1/src/Waitress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/CafeMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/DinerMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/DinerMenuIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/MenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/PancakeHouseMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/src/Waitress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-3/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-3/src/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-3/src/MenuComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-3/src/MenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-3/src/Waitress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/GumballMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/HasQuarterState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/NoQuarterState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/SoldOutState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/SoldState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/src/WinnerState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -106,7 +104,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -118,17 +116,17 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main (2)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="chapter06" />
+      <module name="chapter09-3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="chapter06-1" />
+      <module name="chapter10" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (5)" />
-        <item itemvalue="Application.Main (3)" />
-        <item itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
