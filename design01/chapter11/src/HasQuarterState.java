@@ -1,6 +1,4 @@
 import java.util.Random;
-import java.rmi.*;
-import java.rmi.server.*;
 
 public class HasQuarterState implements State{
 	Random randomWinner = new Random(System.currentTimeMillis());

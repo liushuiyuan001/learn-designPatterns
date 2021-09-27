@@ -24,13 +24,14 @@ public class Main {
 		GumballMachine gumballMachine1 = null;
 		GumballMachine gumballMachine2 = null;
 		try {
-			gumballMachine = new GumballMachine("Seattle", 112);
-			gumballMachine1 = new GumballMachine("Boulder", 112);
-			gumballMachine2 = new GumballMachine("Santafe", 112);
+			gumballMachine = new GumballMachine("seattle", 112);
+//			gumballMachine1 = new GumballMachine("boulder", 112);
+//			gumballMachine2 = new GumballMachine("santafe", 112);
 			try {
-				Naming.rebind("//" + gumballMachine.getLocation() + "/gumballmachine", gumballMachine);
-				Naming.rebind("//" + gumballMachine1.getLocation() + "/gumballmachine", gumballMachine1);
-				Naming.rebind("//" + gumballMachine2.getLocation() + "/gumballmachine", gumballMachine2);
+				Naming.rebind("/gumballmachine", gumballMachine);
+//				Naming.rebind("//seattle.mightygumball.com" + "/gumballmachine", gumballMachine);
+//				Naming.rebind("//" + gumballMachine1.getLocation() + "/gumballmachine", gumballMachine1);
+//				Naming.rebind("//" + gumballMachine2.getLocation() + "/gumballmachine", gumballMachine2);
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
