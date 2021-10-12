@@ -2,14 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo1/Demo1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter03/chapter03.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter04-1/chapter04-1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter04/chapter04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter05/chapter05.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06-1/chapter06-1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter06/chapter06.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter07/chapter07.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter08/chapter08.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-1/chapter09-1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-2/chapter09-2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09-3/chapter09-3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter09/chapter09.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter10/chapter10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter11/chapter11.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter11/src/GumballMachineRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter11/src/GumballMachineRemote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter11/src/GumballMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter11/src/GumballMonitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter11/src/HasQuarterState.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter11/src/HasQuarterState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter11/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter11/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter11/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter11/src/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter11/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter11/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +124,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (3)">
+  <component name="RunManager" selected="Application.Main (4)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="chapter09-3" />
@@ -131,9 +146,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="chapter09-2" />
+      <module name="Demo" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
