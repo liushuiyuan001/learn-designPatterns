@@ -1,4 +1,4 @@
-package com.study;
+package hong.study;
 
 public class Squeak implements QuackBehavior {
     @Override

@@ -2,29 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo1/Demo1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter03/chapter03.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04-1/chapter04-1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter04/chapter04.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter05/chapter05.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter06-1/chapter06-1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter06/chapter06.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter07/chapter07.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter08/chapter08.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-1/chapter09-1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-2/chapter09-2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09-3/chapter09-3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter09/chapter09.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter10/chapter10.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter11/chapter11.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/src/hong/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/src/ming/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo/src/mr/jun/Arrays.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo1/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Demo/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/FlyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/FlyNoWay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyNoWay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/FlyRockPowered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyRockPowered.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/FlyWithWings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyWithWings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/MallarDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/MallarDuck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/ModelDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/ModelDuck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/MuteQuack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/MuteQuack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/Quack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/Quack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/QuackBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/QuackBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/study/Squeak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/Squeak.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +46,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/com/study/Duck.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/MallarDuck.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/FlyNoWay.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/ModelDuck.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/MuteQuack.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/QuackBehavior.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/Quack.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/Squeak.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/FlyWithWings.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/com/study/HelloWorld.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/Duck.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/MallarDuck.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/FlyNoWay.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/ModelDuck.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/MuteQuack.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/QuackBehavior.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/Quack.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/Squeak.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/FlyWithWings.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/hong/study/HelloWorld.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -124,14 +119,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (4)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="chapter09-3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="chapter10" />
@@ -153,6 +141,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Demo1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="chapter11" />
@@ -162,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>

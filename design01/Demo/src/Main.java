@@ -31,21 +31,116 @@ public class Main {
 		
 		Person p = new Student();
 		p.sayHello();
+		String[] names = new String[]{"zs","ls"};
+		p.testMultipleArray(names);
+		p.testMultipleArray("ww","wl");
+		String bob = "Bob";
+		p.name = bob;
+		System.out.println(p.name);
+		bob = "Alice";
+		System.out.println(p.name);
+		p.array = names;
+		System.out.println(Arrays.toString(p.array));
+		names[0] = "zss";
+		System.out.println(Arrays.toString(p.array));
 		
+		Income[] incomes = new Income[] {
+			new Income(3000),
+			new Salary(7500),
+			new SpecialAllowance(15000)
+		};
+		System.out.println(totalTax(incomes));
+		
+	}
+	
+	public static  double totalTax(Income... incomes) {
+		double total = 0;
+		for (Income income : incomes) {
+			total += income.getTax();
+		}
+		return total;
 	}
 }
 
 class Person {
+	String name;
+	String[] array;
+	
+	Person() {
+	
+	}
+	
+	Person(String name, String[] array) {
+		this.name = name;
+		this.array = array;
+	}
 
-
-	 void sayHello() {
+	void sayHello() {
 		System.out.println("Person Hello");
 	}
+	
+	void sayHello(String name) {
+		System.out.println(name);
+	}
+	
+	String sayHello(int age) {
+		return "test";
+	}
+	
+	public void testMultipleArray(String... names) {
+		 System.out.println(Arrays.toString(names));
+	}
+	
 }
 
 class Student extends Person{
-
+	
+	Student() {
+	
+	}
+	
+	Student(String name, String[] array) {
+		super(name, array);
+	}
+	
 	void sayHello(){
 	  System.out.println("Student Hello");
+	}
+}
+
+class Income {
+	double income;
+	
+	Income(double income) {
+		this.income = income;
+	}
+	
+	double getTax() {
+		return income * 0.1;
+	}
+}
+
+class Salary extends Income {
+	Salary(double income) {
+		super(income);
+	}
+	
+	@Override
+	double getTax() {
+		if(income <= 5000) {
+			return 0;
+		}
+		return (income - 5000) * 0.2;
+	}
+}
+
+class SpecialAllowance extends Salary {
+	SpecialAllowance(double income) {
+		super(income);
+	}
+	
+	@Override
+	double getTax() {
+		return 0;
 	}
 }

@@ -1,4 +1,4 @@
-package com.study;
+package hong.study;
 
 public abstract class Duck {
     FlyBehavior flyBehavior;

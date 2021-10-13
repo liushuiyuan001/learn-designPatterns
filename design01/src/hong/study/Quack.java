@@ -1,4 +1,4 @@
-package com.study;
+package hong.study;
 
 public class Quack implements QuackBehavior {
     @Override

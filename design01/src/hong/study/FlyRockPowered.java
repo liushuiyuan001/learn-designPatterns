@@ -1,4 +1,4 @@
-package com.study;
+package hong.study;
 
 public class FlyRockPowered implements FlyBehavior {
     @Override
