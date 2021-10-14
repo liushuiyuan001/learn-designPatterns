@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Demo/src/hong/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo/src/ming/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo/src/mr/jun/Arrays.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo1/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo1/src/Ann" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo1/src/Generics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demo/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/FlyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/FlyNoWay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyNoWay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/FlyRockPowered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyRockPowered.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/FlyWithWings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/FlyWithWings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/MallarDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/MallarDuck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/ModelDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/ModelDuck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/MuteQuack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/MuteQuack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/Quack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/Quack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/QuackBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/QuackBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/study/Squeak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hong/study/Squeak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo1/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Demo1/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Kotlin Annotation" />
         <option value="Class" />
       </list>
     </option>
@@ -119,10 +106,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="chapter10" />
+  <component name="RunManager" selected="Application.Generics">
+    <configuration name="Generics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generics" />
+      <module name="Demo1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Generics" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
