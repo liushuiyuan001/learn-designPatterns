@@ -1,10 +1,13 @@
+import java.time.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Generics {
 	public static void main(String[] args) {
 //	     new Generics().go();
-		 new Generics().testE();
+//		 new Generics().testE();
+		testLocalDateTime();
+//		 testZonedDateTime();
 	}
 	
 	public void go() {
@@ -44,6 +47,53 @@ public class Generics {
 		getData(age);
 		
 		getUperNumber(age);
+	}
+	
+	public static void testLocalDateTime() {
+		// 获取当前的日期时间
+		LocalDateTime localDateTime = LocalDateTime.now();
+		System.out.println("localDateTime: " +  localDateTime);
+		
+		LocalDate date1 = localDateTime.toLocalDate();
+		System.out.println("date1: " + date1);
+		
+		int year = localDateTime.getYear();
+		Month month = localDateTime.getMonth();
+		
+		int day = localDateTime.getDayOfMonth();
+		int hour = localDateTime.getHour();
+		int minute = localDateTime.getMinute();
+		int seconds = localDateTime.getSecond();
+		
+		System.out.println("year:" + year + " month:" + month.getValue() + " day:" + day + " h:" + hour + " m:" + minute + " s:" + seconds);
+		
+		LocalDateTime date2 = localDateTime.withDayOfMonth(10).withMonth(9).withYear(2012);
+		System.out.println("date2: " +  date2);
+		
+		LocalDate date3 = LocalDate.of(2012, Month.AUGUST,12);
+		System.out.println("date3: " + date3);
+		
+		LocalTime time = LocalTime.of(22,15,23);
+		System.out.println("time: " + time);
+		
+		LocalTime time1 = LocalTime.of(22,15);
+		System.out.println("time1: " + time1);
+		
+		LocalTime time2 = LocalTime.parse("20:15");
+		System.out.println("time2 " + time2);
+		
+	}
+	
+	public static void testZonedDateTime() {
+		// 获取当前时间日期
+		ZonedDateTime date1 = ZonedDateTime.parse("2015-12-03T10:15:30+05:30[Asia/Shanghai]");
+		System.out.println(date1);
+		
+		ZoneId id = ZoneId.of("Europe/Paris");
+		System.out.println(id);
+		
+		ZoneId currentZoneId = ZoneId.systemDefault();
+		System.out.println(currentZoneId);
 	}
 	
 	public static void getData(List<?> data){
