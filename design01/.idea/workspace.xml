@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Demo1/src/Ser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo1/src/employee.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demo1/src/StudyDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,17 +105,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Ser">
+  <component name="RunManager" selected="Application.StudyDate">
     <configuration name="Generics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Generics" />
       <module name="Demo1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="chapter11" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,13 +134,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StudyDate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StudyDate" />
+      <module name="Demo1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StudyDate" />
         <item itemvalue="Application.Ser" />
         <item itemvalue="Application.Generics" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
-        <item itemvalue="Application.Main (3)" />
       </list>
     </recent_temporary>
   </component>
