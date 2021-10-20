@@ -23,6 +23,7 @@
       <module fileurl="file://$PROJECT_DIR$/chapter11-1/chapter11-1.iml" filepath="$PROJECT_DIR$/chapter11-1/chapter11-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter12/chapter12.iml" filepath="$PROJECT_DIR$/chapter12/chapter12.iml" />
       <module fileurl="file://$PROJECT_DIR$/design.iml" filepath="$PROJECT_DIR$/design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/offfer/offfer.iml" filepath="$PROJECT_DIR$/offfer/offfer.iml" />
     </modules>
   </component>
 </project>
