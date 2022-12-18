@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54607de4-dade-4fb6-9d27-cde114afa0e6" name="Default Changelist" comment=".0.">
+      <change afterPath="$PROJECT_DIR$/../demo/http/test.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/config/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/config/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter02/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter02/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter03/src/Soy.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter03/src/Soy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter03/src/Whip.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter03/src/Whip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
