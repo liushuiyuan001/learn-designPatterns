@@ -1,10 +1,3 @@
-<script lang="ts" setup>
-import { defineComponent, ref } from 'vue';
-import { RouterLink, RouterView } from 'vue-router';
-const selectedKeys2 = ref<string[]>(['1'])
-const openKeys = ref<string[]>(['sub1'])
-</script>
-
 <template>
   <a-layout-sider width="200" style="background: #fff">
   <a-menu
@@ -55,7 +48,59 @@ const openKeys = ref<string[]>(['sub1'])
     <a-layout-content
       :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
     >
-      Content
+      <a-list item-layout="vertical" size="large" :pagination="pagination" :grid="{ gutter: 20, column: 3 }" :data-source="ebookList">
+          <template #renderItem="{ item }">
+            <a-list-item key="item.name">
+              <template #actions>
+                <span v-for="{ type, text } in actions" :key="type">
+                  <component :is="hashMap[type]" style="margin-right: 8px" />
+                  {{ text }}
+                </span>
+              </template>
+              <a-list-item-meta :description="item.description">
+                <template #title>
+                  <a :href="item.href">{{ item.name }}</a>
+                </template>
+                <template #avatar><a-avatar :size="50" shape="square" :src="item.cover" /></template>
+              </a-list-item-meta>
+            </a-list-item>
+          </template>
+      </a-list>
     </a-layout-content>
   </a-layout>
 </template>
+
+<script lang="ts" setup>
+import { StarOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons-vue';
+import { ref, onMounted, reactive } from 'vue';
+import axios from 'axios'
+import { RouterLink, RouterView } from 'vue-router';
+const selectedKeys2 = ref<string[]>(['1'])
+const openKeys = ref<string[]>(['sub1'])
+let ebookList = ref([])
+onMounted(async() => {
+  const res = await axios.get('/ebook/list')
+  console.log('res.data.content', res)
+  ebookList.value = res.content
+})
+
+const pagination = {
+  onChange: (page: number) => {
+    console.log(page);
+  },
+  pageSize: 3,
+};
+
+const hashMap: Record<string, any> = {
+  'StarOutlined': StarOutlined,
+  'LikeOutlined': LikeOutlined,
+  'MessageOutlined': MessageOutlined
+}
+
+const actions: Record<string, string>[] = [
+  { type: 'StarOutlined', text: '156' },
+  { type: 'LikeOutlined', text: '156' },
+  { type: 'MessageOutlined', text: '2' },
+];
+
+</script>

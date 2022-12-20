@@ -1,5 +1,5 @@
 <template>
-  <a-table :columns="columns" :data-source="data">
+  <a-table :columns="columns" :data-source="list" :pagination="pagination" @change="handlePageChange">
     <template #headerCell="{ column }">
       <template v-if="column.key === 'name'">
         <span>
@@ -31,67 +31,75 @@
           <a>Invite 一 {{ record.name }}</a>
           <a-divider type="vertical" />
           <a>Delete</a>
-          <a-divider type="vertical" />
-          <a class="ant-dropdown-link">
-            More actions
-            <down-outlined />
-          </a>
         </span>
       </template>
     </template>
   </a-table>
 </template>
 <script lang="ts" setup>
+import { ref, onMounted, reactive } from 'vue';
+import axios from 'axios'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
-import { defineComponent } from 'vue';
+const list = ref([])
+const pagination = reactive({
+  pageSize: 2,
+  current: 1,
+  total: 0
+})
+onMounted(() => {
+  handleQuery({})
+})
+const handleQuery = async({}) => {
+  const res = await axios.get('/ebook/list')
+  console.log('res.data.content', res)
+  list.value = res.content
+  pagination.total = res.content.length
+}
+const handlePageChange = (pageObj: any) => {
+  console.log('pageObj', pageObj)
+  pagination.current = pageObj.current
+  pagination.total = pageObj.total
+  pagination.pageSize = pageObj.pageSize
+}
 const columns = [
+{
+    name: '封面',
+    dataIndex: 'cover',
+    key: 'cover',
+  },
   {
-    name: 'Name',
+    name: '名称',
     dataIndex: 'name',
     key: 'name',
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    name: '封面一',
+    key: 'category1Id',
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    name: '封面二',
+    key: 'category2Id',
   },
   {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
+    title: '描述',
+    dataIndex: 'description',
+    key: 'description',
+  },
+  {
+    title: '文档数',
+    dataIndex: 'docCount',
+  },
+  {
+    title: '阅读数',
+    dataIndex: 'viewCount',
+  },
+  {
+    title: '点赞数',
+    dataIndex: 'voteCount',
   },
   {
     title: 'Action',
     key: 'action',
-  },
-];
-
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
   },
 ];
 
