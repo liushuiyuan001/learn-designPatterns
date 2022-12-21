@@ -3,10 +3,11 @@ package com.example.demo.service;
 import com.example.demo.domain.Ebook;
 import com.example.demo.domain.EbookExample;
 import com.example.demo.mapper.EbookMapper;
-import com.example.demo.req.EbookReq;
-import com.example.demo.req.PageReq;
-import com.example.demo.resp.EbookResp;
+import com.example.demo.req.EbookQueryReq;
+import com.example.demo.req.EbookSaveReq;
+import com.example.demo.resp.EbookQueryResp;
 import com.example.demo.resp.PageResp;
+import com.example.demo.util.SnowFlake;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
@@ -28,7 +29,10 @@ public class EbookService {
 	@Resource
 	private EbookMapper ebookMapper;
 	
-	public PageResp<EbookResp> list(EbookReq req) {
+	@Resource
+	private SnowFlake snowFlake;
+	
+	public PageResp<EbookQueryResp> list(EbookQueryReq req) {
 		EbookExample example = new EbookExample();
 		EbookExample.Criteria criteria =  example.createCriteria();
 		if(!ObjectUtils.isEmpty(req.getName())) {
@@ -45,16 +49,32 @@ public class EbookService {
 		pageInfo.getTotal();
 		pageInfo.getPages();
 		
-		List<EbookResp> respList = new ArrayList<>();
+		List<EbookQueryResp> respList = new ArrayList<>();
 		for(Ebook ebook : ebookList) {
-			EbookResp ebookReq = new EbookResp();
+			EbookQueryResp ebookReq = new EbookQueryResp();
 			BeanUtils.copyProperties(ebook, ebookReq);
 			respList.add(ebookReq);
 		}
 		
-		PageResp<EbookResp> pageResp = new PageResp<>();
+		PageResp<EbookQueryResp> pageResp = new PageResp<>();
 		pageResp.setList(respList);
 		pageResp.setTotal(pageInfo.getTotal());
 		return pageResp;
+	}
+	
+	public void save(EbookSaveReq req) {
+		Ebook ebook = new Ebook();
+		BeanUtils.copyProperties(req, ebook);
+		if(ObjectUtils.isEmpty(req.getId())) {
+			// 新增
+			ebook.setId(snowFlake.nextId());
+			ebookMapper.insert(ebook);
+		} else {
+			ebookMapper.updateByPrimaryKey(ebook);
+		}
+	}
+	
+	public void delete(Long id) {
+		ebookMapper.deleteByPrimaryKey(id);
 	}
 }

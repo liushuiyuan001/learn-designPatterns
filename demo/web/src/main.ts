@@ -8,6 +8,8 @@ import 'ant-design-vue/dist/antd.css';
 
 import './assets/main.css'
 
+import { message } from 'ant-design-vue';
+
 import axios from 'axios'
 axios.defaults.baseURL = import.meta.env.VITE_VUE_APP_SERVER
 /**
@@ -26,6 +28,9 @@ axios.interceptors.request.use(function (config) {
 });
 axios.interceptors.response.use(function (response) {
   console.log('返回结果：', response);
+  if(!response.data.success) {
+    message.error(response.data.message);
+  }
   return response.data;
 }, error => {
   console.log('返回错误：', error);
