@@ -75,13 +75,18 @@ import { StarOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons-v
 import { ref, onMounted, reactive } from 'vue';
 import axios from 'axios'
 import { RouterLink, RouterView } from 'vue-router';
+import type { Resp } from '@/type';
 const selectedKeys2 = ref<string[]>(['1'])
 const openKeys = ref<string[]>(['sub1'])
 let ebookList = ref([])
 onMounted(async() => {
-  const res = await axios.get('/ebook/list')
-  console.log('res.data.content', res)
-  ebookList.value = res.content
+  const res:Resp = await axios.get('/ebook/list', {
+    params: {
+      page: 1,
+      size: 10000,
+    }
+  });
+  ebookList.value = res.content.list
 })
 
 const pagination = {

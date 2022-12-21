@@ -40,26 +40,35 @@
 import { ref, onMounted, reactive } from 'vue';
 import axios from 'axios'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
+import type { Resp } from '@/type';
+
 const list = ref([])
 const pagination = reactive({
-  pageSize: 2,
+  pageSize: 4,
   current: 1,
   total: 0
 })
 onMounted(() => {
-  handleQuery({})
+  handleQuery(1, pagination.pageSize )
 })
-const handleQuery = async({}) => {
-  const res = await axios.get('/ebook/list')
-  console.log('res.data.content', res)
-  list.value = res.content
-  pagination.total = res.content.length
+
+const handleQuery = async(page: number , size: number) => {
+  const res:Resp = await axios.get('/ebook/list', {
+    params: {page, size}
+  })
+  list.value = res.content.list
+  pagination.total = res.content.total
 }
+
 const handlePageChange = (pageObj: any) => {
-  console.log('pageObj', pageObj)
   pagination.current = pageObj.current
   pagination.total = pageObj.total
   pagination.pageSize = pageObj.pageSize
+
+  handleQuery(
+    pageObj.current,
+    pageObj.pageSize
+  )
 }
 const columns = [
 {
