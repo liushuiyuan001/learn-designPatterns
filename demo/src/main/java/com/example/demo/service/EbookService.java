@@ -38,6 +38,9 @@ public class EbookService {
 		if(!ObjectUtils.isEmpty(req.getName())) {
 			criteria.andNameLike("%" + req.getName() + "%");
 		}
+		if(!ObjectUtils.isEmpty(req.getCategory2Id())) {
+			criteria.andCategory2IdEqualTo(req.getCategory2Id());
+		}
 		PageHelper.startPage(req.getPage(), req.getSize());
 		List<Ebook> ebookList = ebookMapper.selectByExample(example);
 		
@@ -46,8 +49,6 @@ public class EbookService {
 		LOG.info("总行数：{}", pageInfo.getTotal());
 		LOG.info("总页数：{}", pageInfo.getPages());
 		
-		pageInfo.getTotal();
-		pageInfo.getPages();
 		
 		List<EbookQueryResp> respList = new ArrayList<>();
 		for(Ebook ebook : ebookList) {

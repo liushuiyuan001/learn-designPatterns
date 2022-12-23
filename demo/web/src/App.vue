@@ -14,6 +14,9 @@
         <a-menu-item key="ebook">
           <RouterLink to="/ebook">电子书管理</RouterLink>
         </a-menu-item>
+        <a-menu-item key="category">
+          <RouterLink to="/category">分类管理</RouterLink>
+        </a-menu-item>
         <a-menu-item key="2">
           <RouterLink to="/about">About</RouterLink>
         </a-menu-item>

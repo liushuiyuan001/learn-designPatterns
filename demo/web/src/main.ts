@@ -11,7 +11,18 @@ import './assets/main.css'
 import { message } from 'ant-design-vue';
 
 import axios from 'axios'
+import JsonBig from 'json-bigint'
 axios.defaults.baseURL = import.meta.env.VITE_VUE_APP_SERVER
+
+axios.defaults.transformResponse=[
+  function (data:any) {
+    const json = JsonBig({
+      storeAsString: true,
+    })
+    const res = json.parse(data)
+    return res
+  }
+]
 /**
  * axios拦截器
  */

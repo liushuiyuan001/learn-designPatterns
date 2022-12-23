@@ -1,46 +1,18 @@
 <template>
   <a-layout-sider width="200" style="background: #fff">
   <a-menu
-    v-model:selectedKeys="selectedKeys2"
-    v-model:openKeys="openKeys"
     mode="inline"
     :style="{ height: '100%', borderRight: 0 }"
+    @click="handleMenuClick"
   >
-    <a-sub-menu key="sub1">
+    <a-sub-menu :key="p.id" v-for="p in categoryList">
       <template #title>
         <span>
           <user-outlined />
-          subnav 1
+          {{ p.name }}
         </span>
       </template>
-      <a-menu-item key="1">option1</a-menu-item>
-      <a-menu-item key="2">option2</a-menu-item>
-      <a-menu-item key="3">option3</a-menu-item>
-      <a-menu-item key="4">option4</a-menu-item>
-    </a-sub-menu>
-    <a-sub-menu key="sub2">
-      <template #title>
-        <span>
-          <laptop-outlined />
-          subnav 2
-        </span>
-      </template>
-      <a-menu-item key="5">option5</a-menu-item>
-      <a-menu-item key="6">option6</a-menu-item>
-      <a-menu-item key="7">option7</a-menu-item>
-      <a-menu-item key="8">option8</a-menu-item>
-    </a-sub-menu>
-    <a-sub-menu key="sub3">
-      <template #title>
-        <span>
-          <notification-outlined />
-          subnav 3
-        </span>
-      </template>
-      <a-menu-item key="9">option9</a-menu-item>
-      <a-menu-item key="10">option10</a-menu-item>
-      <a-menu-item key="11">option11</a-menu-item>
-      <a-menu-item key="12">option12</a-menu-item>
+      <a-menu-item :key="c.id" v-for="c in p.children">{{ c.name }}</a-menu-item>
     </a-sub-menu>
   </a-menu>
   </a-layout-sider>
@@ -48,7 +20,7 @@
     <a-layout-content
       :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
     >
-      <a-list item-layout="vertical" size="large" :pagination="pagination" :grid="{ gutter: 20, column: 3 }" :data-source="ebookList">
+      <a-list item-layout="vertical" size="large" :pagination="false" :grid="{ gutter: 20, column: 3 }" :data-source="ebookList">
           <template #renderItem="{ item }">
             <a-list-item key="item.name">
               <template #actions>
@@ -74,27 +46,38 @@
 import { StarOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons-vue';
 import { ref, onMounted, reactive } from 'vue';
 import axios from 'axios'
+import { formatTree  } from '@/util';
 import { RouterLink, RouterView } from 'vue-router';
-import type { Resp } from '@/type';
-const selectedKeys2 = ref<string[]>(['1'])
-const openKeys = ref<string[]>(['sub1'])
+import type { Resp, PageResp } from '@/type';
+const categoryList = ref(<any[]>[])
 let ebookList = ref([])
+
 onMounted(async() => {
-  const res:Resp = await axios.get('/ebook/list', {
+  handleQuery()
+  handleCategoryQuery()
+})
+
+const handleQuery = async(category2Id?:any) => {
+  const res:PageResp = await axios.get('/ebook/list', {
     params: {
       page: 1,
       size: 10000,
+      category2Id
     }
-  });
+  })
   ebookList.value = res.content.list
-})
+}
 
-const pagination = {
-  onChange: (page: number) => {
-    console.log(page);
-  },
-  pageSize: 3,
-};
+const handleCategoryQuery = async() => {
+  const res:Resp = await axios.get('/category/all')
+  const data = formatTree(res.content)
+  categoryList.value = data
+}
+
+const handleMenuClick = (item:any) => {
+  console.log('111', item)
+  handleQuery(item.key)
+}
 
 const hashMap: Record<string, any> = {
   'StarOutlined': StarOutlined,
