@@ -8,7 +8,7 @@
       <template v-if="column.key === 'name'">
         <span>
           <smile-outlined />
-          Name
+          名称
         </span>
       </template>
     </template>
@@ -55,7 +55,7 @@
       </a-form-item>
 
     </a-form>
-    </a-modal>
+  </a-modal>
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, reactive, watch } from 'vue';
@@ -66,7 +66,6 @@ import type { Resp } from '@/type';
 
 const list = ref(<any[]>[])
 
-const name = ref("")
 const visible = ref(false)
 const initData = {
   id: 0,
@@ -79,10 +78,6 @@ let category = ref(initData)
 const okLoading = ref(false)
 
 onMounted(() => {
-  handleQuery()
-})
-
-watch(name, (newVal) => {
   handleQuery()
 })
 
@@ -124,7 +119,7 @@ const columns = [
   },
   {
     title: '父分类',
-    dataIndex: 'parent',
+    dataIndex: 'parentId',
   },
   {
     title: '排序',

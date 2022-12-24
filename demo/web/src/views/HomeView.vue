@@ -1,20 +1,20 @@
 <template>
   <a-layout-sider width="200" style="background: #fff">
-  <a-menu
-    mode="inline"
-    :style="{ height: '100%', borderRight: 0 }"
-    @click="handleMenuClick"
-  >
-    <a-sub-menu :key="p.id" v-for="p in categoryList">
-      <template #title>
-        <span>
-          <user-outlined />
-          {{ p.name }}
-        </span>
-      </template>
-      <a-menu-item :key="c.id" v-for="c in p.children">{{ c.name }}</a-menu-item>
-    </a-sub-menu>
-  </a-menu>
+    <a-menu
+      mode="inline"
+      :style="{ height: '100%', borderRight: 0 }"
+      @click="handleMenuClick"
+    >
+      <a-sub-menu :key="p.id" v-for="p in categoryList">
+        <template #title>
+          <span>
+            <user-outlined />
+            {{ p.name }}
+          </span>
+        </template>
+        <a-menu-item :key="c.id" v-for="c in p.children">{{ c.name }}</a-menu-item>
+      </a-sub-menu>
+    </a-menu>
   </a-layout-sider>
   <a-layout style="padding: 24px 24px 0px">
     <a-layout-content
@@ -31,9 +31,13 @@
               </template>
               <a-list-item-meta :description="item.description">
                 <template #title>
-                  <a :href="item.href">{{ item.name }}</a>
+                  <RouterLink :to="'/docView?ebookId=' + item.id  ">
+                    {{ item.name }}
+                  </RouterLink>
                 </template>
-                <template #avatar><a-avatar :size="50" shape="square" :src="item.cover" /></template>
+                <template #avatar>
+                  <a-avatar :size="50" style="background-color: #1890ff">{{ item.name[0] }}</a-avatar>
+                </template>
               </a-list-item-meta>
             </a-list-item>
           </template>

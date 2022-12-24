@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import Ebook from '../views/admin/Ebook.vue'
 import Category from '../views/admin/Category.vue'
 import Doc from '../views/admin/Doc.vue'
+import User from '../views/admin/User.vue'
+import DocView from '../views/DocView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +28,16 @@ const router = createRouter({
       path: '/doc',
       name: 'doc',
       component: Doc
+    },
+    {
+      path: '/docView',
+      name: 'docView',
+      component: DocView
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: User
     },
     {
       path: '/about',

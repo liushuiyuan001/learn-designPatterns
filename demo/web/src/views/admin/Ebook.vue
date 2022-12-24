@@ -9,7 +9,7 @@
       <template v-if="column.key === 'name'">
         <span>
           <smile-outlined />
-          Name
+          名称
         </span>
       </template>
     </template>
@@ -17,7 +17,9 @@
     <template #bodyCell="{ column, record }">
       <template v-if="column.key === 'name'">
         <a>
-          {{ record.name }}
+          <RouterLink :to="'/docView?ebookId=' + record.id  ">
+            {{ record.name }}
+          </RouterLink>
         </a>
       </template>
       <template v-if="column.key === 'category'">
@@ -25,8 +27,12 @@
       </template>
       <template v-else-if="column.key === 'action'">
         <span>
+          <RouterLink :to="'/docView?ebookId=' + record.id  ">
+            <a-button type="link">查看文档</a-button>
+          </RouterLink>
+          <a-divider type="vertical" />
           <RouterLink :to="'/doc?ebookId=' + record.id  ">
-            <a-button type="primary" @click="handleEdit(record)">文档管理</a-button>
+            <a-button type="normal" @click="handleEdit(record)">文档管理</a-button>
           </RouterLink>
           <a-divider type="vertical" />
           <a-button type="primary" @click="handleEdit(record)">编辑</a-button>
@@ -68,7 +74,7 @@ import axios from 'axios'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
 import type { PageResp, Resp } from '@/type';
 import { formatTree  } from '@/util';
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterLink } from 'vue-router';
 
 const list = ref([])
 const categoryIds = ref(<any[]>[])
@@ -99,7 +105,7 @@ onMounted(() => {
   handleCategoryQuery()
 })
 
-watch(name, (newVal) => {
+watch(name, () => {
   handleQuery(pagination.current, pagination.pageSize)
 })
 

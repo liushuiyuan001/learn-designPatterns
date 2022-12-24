@@ -29,12 +29,22 @@ public class DocController {
 		return response;
 	}
 	
-	@GetMapping("/all")
-	public CommonResp<List<DocQueryResp>> all() {
+	@GetMapping("/all/{ebookId}")
+	public CommonResp<List<DocQueryResp>> all(@PathVariable Long ebookId) {
 		
 		CommonResp<List<DocQueryResp>> response = new CommonResp<>();
-		List<DocQueryResp> list = docService.all();
+		List<DocQueryResp> list = docService.all(ebookId);
 		response.setContent(list);
+		
+		return response;
+	}
+	
+	@GetMapping("/queryContent/{id}")
+	public CommonResp<String> queryContent(@PathVariable Long id) {
+		
+		CommonResp<String> response = new CommonResp<>();
+		String content = docService.queryContent(id);
+		response.setContent(content);
 		
 		return response;
 	}

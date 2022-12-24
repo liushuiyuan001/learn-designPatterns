@@ -3,13 +3,13 @@
     <a-layout-header class="header">
       <div class="logo" />
       <a-menu
-        v-model:selectedKeys="selectedKeys1"
+        v-model:selectedKeys="selectedKeys"
         theme="dark"
         mode="horizontal"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item key="1">
-          <RouterLink to="/">Home</RouterLink>
+        <a-menu-item key="/">
+          <RouterLink to="/">首页</RouterLink>
         </a-menu-item>
         <a-menu-item key="ebook">
           <RouterLink to="/ebook">电子书管理</RouterLink>
@@ -17,13 +17,15 @@
         <a-menu-item key="category">
           <RouterLink to="/category">分类管理</RouterLink>
         </a-menu-item>
-        <a-menu-item key="2">
-          <RouterLink to="/about">About</RouterLink>
+        <a-menu-item key="user">
+          <RouterLink to="/user">用户管理</RouterLink>
+        </a-menu-item>
+        <a-menu-item key="about">
+          <RouterLink to="/about">关于我们</RouterLink>
         </a-menu-item>
       </a-menu>
     </a-layout-header>
     <a-layout>
-
       <RouterView />
     </a-layout>
     <a-layout-footer style="text-align: center">
@@ -34,7 +36,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
-const selectedKeys1 = ref<string[]>(['1'])
+const selectedKeys = ref<string[]>(['/'])
 </script>
 <style>
 .ant-layout {

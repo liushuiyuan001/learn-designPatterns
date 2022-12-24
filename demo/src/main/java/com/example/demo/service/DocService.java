@@ -63,8 +63,10 @@ public class DocService {
 		return pageResp;
 	}
 	
-	public List<DocQueryResp> all() {
+	public List<DocQueryResp> all(Long ebookId) {
 		DocExample example = new DocExample();
+		DocExample.Criteria criteria = example.createCriteria();
+		criteria.andEbookIdEqualTo(ebookId);
 		example.setOrderByClause("sort asc");
 		List<Doc> docList = docMapper.selectByExample(example);
 		
@@ -112,5 +114,14 @@ public class DocService {
 		}
 		criteria.andIdIn(idNumList);
 		docMapper.deleteByExample(example);
+	}
+	
+	public String queryContent(Long id) {
+		
+		Content content = contentMapper.selectByPrimaryKey(id);
+		if(ObjectUtils.isEmpty(content)) {
+			return "";
+		}
+		return content.getContent();
 	}
 }

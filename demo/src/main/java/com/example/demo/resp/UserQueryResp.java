@@ -1,6 +1,6 @@
-package com.example.demo.domain;
+package com.example.demo.resp;
 
-public class User {
+public class UserQueryResp {
     private Long id;
     
     private String loginName;

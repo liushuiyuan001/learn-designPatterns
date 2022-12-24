@@ -8,19 +8,21 @@
       <template v-if="column.key === 'name'">
         <span>
           <smile-outlined />
-          Name
+          名称
         </span>
       </template>
     </template>
 
     <template #bodyCell="{ column, record }">
       <template v-if="column.key === 'name'">
-        <a>
+        <div @click="handleView(record)">
           {{ record.name }}
-        </a>
+        </div>
       </template>
       <template v-else-if="column.key === 'action'">
         <span>
+          <a-button type="link" @click="handleView(record)">查看内容</a-button>
+          <a-divider type="vertical" />
           <a-button type="primary" @click="handleEdit(record)">编辑</a-button>
           <a-divider type="vertical" />
           <a-popconfirm
@@ -35,6 +37,7 @@
       </template>
     </template>
   </a-table>
+
   <a-modal v-model:visible="visible" title="分类管理" width="900px" @ok="handleOk" :okButtonProps="{ loading: okLoading }">
     <a-form :model="doc" :labelCol="{ span: 4 }">
 
@@ -78,7 +81,19 @@
         </div>
       </a-form-item>
     </a-form>
-    </a-modal>
+  </a-modal>
+  <a-drawer
+    v-model:visible="viewVisible"
+    class="custom-class"
+    title="内容预览"
+    placement="right"
+  >
+    <Editor
+      style="height: 500px; overflow-y: hidden;"
+      v-model="valueHtml"
+      @onCreated="handleCreated"
+    />
+  </a-drawer>
 </template>
 <script lang="ts" setup>
 import '@wangeditor/editor/dist/css/style.css' // 引入 css
@@ -88,14 +103,14 @@ import axios from 'axios'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
 import { formatTree } from '@/util';
 import type { Resp } from '@/type';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const list = ref(<any[]>[])
 
 const name = ref("")
 const visible = ref(false)
+const viewVisible = ref(false)
 const initData = {
-  id: -1,
   name:'',
   parent: 0,
   ebookId: -1,
@@ -115,9 +130,9 @@ const handleCreated = (editor: any) => {
 }
 // 组件销毁时，也及时销毁编辑器
 onBeforeUnmount(() => {
-      const editor = editorRef.value
-      if (editor == null) return
-      editor.destroy()
+  const editor = editorRef.value
+  if (editor == null) return
+  editor.destroy()
 })
 
 onMounted(() => {
@@ -129,9 +144,14 @@ watch(name, (newVal) => {
 })
 
 const handleQuery = async() => {
-  const res:Resp = await axios.get('/doc/all')
+  const res:Resp = await axios.get('/doc/all/' + route.query.ebookId)
   const data = formatTree(res.content)
   list.value = data
+}
+
+const handleQueryContent = async(id: number) => {
+  const res:Resp = await axios.get('/doc/queryContent/' + id )
+  valueHtml.value = res.content
 }
 
 const docTreeList = computed(() => {
@@ -190,9 +210,16 @@ const handleAdd = () => {
   doc.value.ebookId = Number(route.query.ebookId)
 }
 
+const handleView = (record: any) => {
+  doc.value = { ...record }
+  viewVisible.value = true;
+  handleQueryContent(doc.value.id)
+}
+
 const handleEdit = (record: any) => {
   visible.value = true;
   doc.value = { ...record }
+  handleQueryContent(doc.value.id)
 }
 
 const handleDelete = async(record: any) => {
