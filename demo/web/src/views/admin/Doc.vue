@@ -35,8 +35,8 @@
       </template>
     </template>
   </a-table>
-  <a-modal v-model:visible="visible" title="分类管理" @ok="handleOk" :okButtonProps="{ loading: okLoading }">
-    <a-form :model="doc" :labelCol="{ span: 6 }">
+  <a-modal v-model:visible="visible" title="分类管理" width="900px" @ok="handleOk" :okButtonProps="{ loading: okLoading }">
+    <a-form :model="doc" :labelCol="{ span: 4 }">
 
       <a-form-item label="名称">
         <a-input v-model:value="doc.name" placeholder="请输入名称" />
@@ -64,12 +64,26 @@
       <a-form-item label="排序">
         <a-input v-model:value="doc.sort" placeholder="input placeholder" />
       </a-form-item>
-
+      <a-form-item label="内容">
+        <div style="border: 1px solid #ccc">
+          <Toolbar
+            style="border-bottom: 1px solid #ccc"
+            :editor="editorRef"
+          />
+          <Editor
+            style="height: 500px; overflow-y: hidden;"
+            v-model="valueHtml"
+            @onCreated="handleCreated"
+          />
+        </div>
+      </a-form-item>
     </a-form>
     </a-modal>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, reactive, watch, computed } from 'vue';
+import '@wangeditor/editor/dist/css/style.css' // 引入 css
+import { onBeforeUnmount, ref, shallowRef, onMounted, watch, computed } from 'vue'
+import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import axios from 'axios'
 import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
 import { formatTree } from '@/util';
@@ -81,10 +95,11 @@ const list = ref(<any[]>[])
 const name = ref("")
 const visible = ref(false)
 const initData = {
-  // id: 0,
+  id: -1,
   name:'',
   parent: 0,
   ebookId: -1,
+  content: undefined,
   sort: 0
 }
 
@@ -92,7 +107,18 @@ let doc = ref(initData)
 const okLoading = ref(false)
 
 const route = useRoute()
-console.log('route.query.ebookId', route.query.ebookId);
+
+const valueHtml = ref()
+const editorRef = shallowRef()
+const handleCreated = (editor: any) => {
+  editorRef.value = editor
+}
+// 组件销毁时，也及时销毁编辑器
+onBeforeUnmount(() => {
+      const editor = editorRef.value
+      if (editor == null) return
+      editor.destroy()
+})
 
 onMounted(() => {
   handleQuery()
@@ -132,6 +158,32 @@ const formatTreeList = (arr: any[] = [], disabled: boolean = false): any[] => {
   })
 }
 
+const getIdList = (list: any[] = [], id: number ): Array<number> => {
+
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+    if(item.id === id) {
+      const t = getChildrenIdList(item.children, [])
+      return [id, ...t]
+    }else{
+      const p = getIdList(item.children, id)
+      if(p.length > 0) {
+        return p
+      }
+    }
+
+  }
+  return []
+}
+
+const getChildrenIdList = (list: any[], arr: number[]) => {
+  list.map(item => {
+    arr.push(item.id)
+    getChildrenIdList(item.children, arr)
+  })
+  return arr
+}
+
 const handleAdd = () => {
   visible.value = true;
   doc.value = initData
@@ -144,13 +196,14 @@ const handleEdit = (record: any) => {
 }
 
 const handleDelete = async(record: any) => {
-
-  const res = await axios.delete("/doc/delete/" + record.id)
+  const temp = getIdList(list.value, record.id)
+  const res = await axios.delete("/doc/delete/" + temp.join(','))
   handleQuery()
 }
 
 const handleOk = async () => {
   okLoading.value = true;
+  doc.value.content = valueHtml.value
   const res = await axios.post("/doc/save",doc.value)
   visible.value = false
   okLoading.value = false

@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.Content;
 import com.example.demo.domain.Doc;
 import com.example.demo.domain.DocExample;
+import com.example.demo.mapper.ContentMapper;
 import com.example.demo.mapper.DocMapper;
 import com.example.demo.req.DocQueryReq;
 import com.example.demo.req.DocSaveReq;
@@ -28,6 +30,9 @@ public class DocService {
 	
 	@Resource
 	private DocMapper docMapper;
+	
+	@Resource
+	private ContentMapper contentMapper;
 	
 	@Resource
 	private SnowFlake snowFlake;
@@ -76,17 +81,36 @@ public class DocService {
 	
 	public void save(DocSaveReq req) {
 		Doc doc = new Doc();
+		Content content = new Content();
 		BeanUtils.copyProperties(req, doc);
+		BeanUtils.copyProperties(req, content);
 		if(ObjectUtils.isEmpty(req.getId())) {
 			// 新增
-			doc.setId(snowFlake.nextId());
+			long uid = snowFlake.nextId();
+			
+			doc.setId(uid);
+			content.setId(uid);
+			
 			docMapper.insert(doc);
+			contentMapper.insert(content);
 		} else {
 			docMapper.updateByPrimaryKey(doc);
+			int count = contentMapper.updateByPrimaryKeyWithBLOBs(content);
+			if(count == 0) {
+				contentMapper.insert(content);
+			}
 		}
 	}
 	
-	public void delete(Long id) {
-		docMapper.deleteByPrimaryKey(id);
+	public void delete(String ids) {
+		DocExample example = new DocExample();
+		DocExample.Criteria criteria = example.createCriteria();
+		String[] idList = ids.split(",");
+		List<Long> idNumList = new ArrayList<>();
+		for(String id : idList) {
+			idNumList.add(Long.parseLong(id));
+		}
+		criteria.andIdIn(idNumList);
+		docMapper.deleteByExample(example);
 	}
 }
