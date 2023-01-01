@@ -211,8 +211,8 @@ const handleAdd = () => {
 }
 
 const handleView = (record: any) => {
-  doc.value = { ...record }
   viewVisible.value = true;
+  doc.value = { ...record }
   handleQueryContent(doc.value.id)
 }
 

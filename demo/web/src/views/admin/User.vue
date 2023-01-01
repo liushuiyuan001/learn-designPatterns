@@ -17,7 +17,6 @@
     <template #bodyCell="{ column, record }">
       <template v-if="column.key === 'action'">
         <span>
-          <a-divider type="vertical" />
           <a-button type="primary" @click="handleEdit(record)">编辑</a-button>
           <a-divider type="vertical" />
           <a-popconfirm
@@ -51,7 +50,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, reactive, watch } from 'vue';
 import axios from 'axios'
-import { SmileOutlined, DownOutlined } from '@ant-design/icons-vue';
+import { SmileOutlined } from '@ant-design/icons-vue';
 import type { PageResp, Resp } from '@/type';
 
 const list = ref([])

@@ -4,6 +4,7 @@ export const formatTree = (list: any[]) => {
     const item = list[i]
     item.children = []
     item.parentId = item.parent
+    item.key = item.id
     delete item.parent
     hash.set(item.id, item)
   }

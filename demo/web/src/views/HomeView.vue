@@ -8,7 +8,7 @@
       <a-sub-menu :key="p.id" v-for="p in categoryList">
         <template #title>
           <span>
-            <user-outlined />
+            <YuqueOutlined />
             {{ p.name }}
           </span>
         </template>
@@ -24,9 +24,17 @@
           <template #renderItem="{ item }">
             <a-list-item key="item.name">
               <template #actions>
-                <span v-for="{ type, text } in actions" :key="type">
-                  <component :is="hashMap[type]" style="margin-right: 8px" />
-                  {{ text }}
+                <span>
+                  <FileSearchOutlined style="margin-right: 8px" />
+                  文档数 {{ item.docCount }}
+                </span>
+                <span>
+                  <EyeOutlined style="margin-right: 8px" />
+                  浏览数 {{ item.viewCount }}
+                </span> 
+                <span>
+                  <LikeOutlined style="margin-right: 8px" />
+                  点赞数 {{ item.voteCount }}
                 </span>
               </template>
               <a-list-item-meta :description="item.description">
@@ -47,7 +55,7 @@
 </template>
 
 <script lang="ts" setup>
-import { StarOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons-vue';
+import { YuqueOutlined, LikeOutlined, FileSearchOutlined, EyeOutlined } from '@ant-design/icons-vue';
 import { ref, onMounted, reactive } from 'vue';
 import axios from 'axios'
 import { formatTree  } from '@/util';
@@ -79,20 +87,7 @@ const handleCategoryQuery = async() => {
 }
 
 const handleMenuClick = (item:any) => {
-  console.log('111', item)
   handleQuery(item.key)
 }
-
-const hashMap: Record<string, any> = {
-  'StarOutlined': StarOutlined,
-  'LikeOutlined': LikeOutlined,
-  'MessageOutlined': MessageOutlined
-}
-
-const actions: Record<string, string>[] = [
-  { type: 'StarOutlined', text: '156' },
-  { type: 'LikeOutlined', text: '156' },
-  { type: 'MessageOutlined', text: '2' },
-];
 
 </script>

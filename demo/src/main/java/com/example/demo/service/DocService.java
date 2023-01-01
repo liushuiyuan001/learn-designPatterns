@@ -5,6 +5,7 @@ import com.example.demo.domain.Doc;
 import com.example.demo.domain.DocExample;
 import com.example.demo.mapper.ContentMapper;
 import com.example.demo.mapper.DocMapper;
+import com.example.demo.mapper.MyDocMapper;
 import com.example.demo.req.DocQueryReq;
 import com.example.demo.req.DocSaveReq;
 import com.example.demo.resp.DocQueryResp;
@@ -30,6 +31,9 @@ public class DocService {
 	
 	@Resource
 	private DocMapper docMapper;
+	
+	@Resource
+	private MyDocMapper myDocMapper;
 	
 	@Resource
 	private ContentMapper contentMapper;
@@ -93,6 +97,8 @@ public class DocService {
 			doc.setId(uid);
 			content.setId(uid);
 			
+			doc.setViewCount(0);
+			doc.setVoteCount(0);
 			docMapper.insert(doc);
 			contentMapper.insert(content);
 		} else {
@@ -119,9 +125,18 @@ public class DocService {
 	public String queryContent(Long id) {
 		
 		Content content = contentMapper.selectByPrimaryKey(id);
+		myDocMapper.updateViewCount(id);
 		if(ObjectUtils.isEmpty(content)) {
 			return "";
 		}
 		return content.getContent();
+	}
+	
+	public void vote(Long id) {
+		myDocMapper.updateVoteCount(id);
+	}
+	
+	public void updateEbookInfo() {
+		myDocMapper.updateEbookInfo();
 	}
 }

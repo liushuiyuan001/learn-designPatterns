@@ -49,6 +49,16 @@ public class DocController {
 		return response;
 	}
 	
+	@GetMapping("/vote/{id}")
+	public CommonResp<String> vote(@PathVariable Long id) {
+		
+		CommonResp<String> response = new CommonResp<>();
+		docService.vote(id);
+		
+		return response;
+	}
+	
+	
 	@PostMapping("/save")
 	public CommonResp<Object> save(@Valid @RequestBody DocSaveReq req) {
 		
