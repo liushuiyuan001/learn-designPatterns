@@ -1,7 +1,6 @@
 <template>
   <a-layout>
     <a-layout-header class="header">
-      <div class="logo" />
       <a-menu
         v-model:selectedKeys="selectedKeys"
         theme="dark"
@@ -24,6 +23,7 @@
           <RouterLink to="/about">关于我们</RouterLink>
         </a-menu-item>
       </a-menu>
+      <Login />
     </a-layout-header>
     <a-layout>
       <RouterView />
@@ -36,11 +36,17 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
+
+import Login from '@/components/Login.vue'
 const selectedKeys = ref<string[]>(['/'])
 </script>
 <style>
 .ant-layout {
   height: 100%;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 #components-layout-demo-top-side-2 .logo {
   float: left;

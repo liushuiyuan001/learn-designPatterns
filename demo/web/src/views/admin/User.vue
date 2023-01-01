@@ -36,7 +36,7 @@
     <a-form :model="ebook" :labelCol="{ span: 6 }">
 
       <a-form-item label="登录名">
-        <a-input v-model:value="ebook.loginName" placeholder="input placeholder" />
+        <a-input v-model:value="ebook.loginName" :disabled="!!ebook.id" placeholder="input placeholder" />
       </a-form-item>
       <a-form-item label="昵称">
         <a-input v-model:value="ebook.name" placeholder="input placeholder" />
