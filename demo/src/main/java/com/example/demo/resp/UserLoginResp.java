@@ -2,20 +2,24 @@ package com.example.demo.resp;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 
-public class UserSaveReq {
+public class UserLoginResp implements Serializable {
     private Long id;
     
-    @NotNull(message = "【登录名】不能为空")
     private String loginName;
     
-    @NotNull(message = "【昵称】不能为空")
     private String name;
     
-    @NotNull(message = "【密码】不能为空")
-    // @Length(min = 6, max = 20, message = "【密码】6~20位")
-    @Pattern(regexp = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,32}$", message = "【密码】至少包含 数字和英文，长度6-32")
-    private String password;
+    public String getToken() {
+        return token;
+    }
+    
+    public void setToken(String token) {
+        this.token = token;
+    }
+    
+    private String token;
     
     public Long getId() {
         return id;
@@ -41,25 +45,13 @@ public class UserSaveReq {
         this.name = name;
     }
     
-    public String getPassword() {
-        return password;
-    }
-    
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", loginName=").append(loginName);
-        sb.append(", name=").append(name);
-        sb.append(", password=").append(password);
-        sb.append("]");
-        return sb.toString();
+        return "UserLoginResp{" +
+                "id=" + id +
+                ", loginName='" + loginName + '\'' +
+                ", name='" + name + '\'' +
+                ", token='" + token + '\'' +
+                '}';
     }
 }

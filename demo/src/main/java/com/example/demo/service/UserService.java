@@ -4,14 +4,14 @@ import com.example.demo.domain.Ebook;
 import com.example.demo.domain.EbookExample;
 import com.example.demo.domain.User;
 import com.example.demo.domain.UserExample;
+import com.example.demo.exception.BusinessException;
+import com.example.demo.exception.BusinessExceptionCode;
 import com.example.demo.mapper.EbookMapper;
 import com.example.demo.mapper.UserMapper;
-import com.example.demo.req.EbookQueryReq;
-import com.example.demo.req.EbookSaveReq;
-import com.example.demo.req.UserQueryReq;
-import com.example.demo.req.UserSaveReq;
+import com.example.demo.req.*;
 import com.example.demo.resp.EbookQueryResp;
 import com.example.demo.resp.PageResp;
+import com.example.demo.resp.UserLoginResp;
 import com.example.demo.resp.UserQueryResp;
 import com.example.demo.util.SnowFlake;
 import com.github.pagehelper.PageHelper;
@@ -20,10 +20,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -71,15 +73,49 @@ public class UserService {
 		User user = new User();
 		BeanUtils.copyProperties(req, user);
 		if(ObjectUtils.isEmpty(req.getId())) {
-			// 新增
-			user.setId(snowFlake.nextId());
-			userMapper.insert(user);
+			User userDB = selectByLoginName(user.getLoginName());
+			if(ObjectUtils.isEmpty(userDB)) {
+				// 新增
+				user.setId(snowFlake.nextId());
+				userMapper.insert(user);
+			} else {
+				throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
+			}
 		} else {
-			userMapper.updateByPrimaryKey(user);
+			user.setLoginName(null);
+			userMapper.updateByPrimaryKeySelective(user);
 		}
+	}
+	
+	public User selectByLoginName(String loginName) {
+		UserExample example = new UserExample();
+		UserExample.Criteria criteria =  example.createCriteria();
+		criteria.andLoginNameLike("%" + loginName + "%");
+		
+		List<User> userList = userMapper.selectByExample(example);
+		
+		if(CollectionUtils.isEmpty(userList)) {
+			return null;
+		}
+		return userList.get(0);
 	}
 	
 	public void delete(Long id) {
 		userMapper.deleteByPrimaryKey(id);
+	}
+	
+	public UserLoginResp login(UserLoginReq user) {
+		User userDB = selectByLoginName(user.getLoginName());
+		if(ObjectUtils.isEmpty(userDB)) {
+			throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+		} else {
+			if(userDB.getPassword().equals(user.getPassword())) {
+				UserLoginResp resp = new UserLoginResp();
+				BeanUtils.copyProperties(user, resp);
+				return  resp;
+			} else {
+				throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
+			}
+		}
 	}
 }
