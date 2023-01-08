@@ -41,6 +41,9 @@ public class DocService {
 	@Resource
 	private SnowFlake snowFlake;
 	
+	@Resource
+	private WsService wsServer;
+	
 	public PageResp<DocQueryResp> list(DocQueryReq req) {
 		DocExample example = new DocExample();
 		example.setOrderByClause("sort asc");
@@ -134,6 +137,9 @@ public class DocService {
 	
 	public void vote(Long id) {
 		myDocMapper.updateVoteCount(id);
+		
+		Doc docDB = docMapper.selectByPrimaryKey(id);
+		wsServer.sendInfo( "[" + docDB.getName() + "]" + "已被点赞", id);
 	}
 	
 	public void updateEbookInfo() {
